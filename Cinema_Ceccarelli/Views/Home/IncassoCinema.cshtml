@@ -1,0 +1,41 @@
+﻿@model IEnumerable<SalaViewModel>
+
+@{
+    ViewBag.Title = "Incasso sale cinema";
+}
+<div class="text-center">
+    <h1 class="Myh1">Welcome in our site !!</h1>
+    <img class="MyImg" src="~/image/film.jpg"/>
+</div>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.IDSala)</th>
+        <th>@Html.DisplayNameFor(model => model.IncassoSala)</th>
+        <th>@Html.DisplayNameFor(model => model.Capienza)</th>
+        <th>@Html.DisplayNameFor(model => model.NumBiglietti)</th>
+        <th>@Html.DisplayNameFor(model => model.CodFilm)</th>
+    </tr>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var film in Model)
+        {
+            <tr>
+                <td>@film.IDSala</td>
+                <td>@film.IncassoSala</td>
+                <td>@film.Capienza</td>
+                <td>@film.NumBiglietti</td>
+                <td>@film.CodFilm</td>
+                <td>
+                    @Html.ActionLink("Visualizza","Visualizza",new {ID = film.IDSala})
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="5" class="text-center"> Nessun incasso disponibile</td>
+        </tr>
+    }
+</table>

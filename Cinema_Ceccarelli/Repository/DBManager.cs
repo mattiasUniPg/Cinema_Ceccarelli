@@ -25,7 +25,7 @@ namespace Cinema_Ceccarelli.Repository
                     Titolo = reader["Titolo"].ToString(),
                     Autore = reader["Autore"].ToString(),
                     Produttore = reader["Produttore"].ToString(),
-                    Genere = reader["Album"].ToString(),
+                    Genere = reader["Genere"].ToString(),
                     Durata = Convert.ToInt32(reader["Durata"])
                 };
                 filmList.Add(film);
@@ -41,7 +41,8 @@ namespace Cinema_Ceccarelli.Repository
            ,[Produttore]
            ,[Genere]
            ,[Durata]
-            VALUES (@Titolo, @Autore, @Produttore, @Genere, @Durata) ";
+            VALUES(@Titolo, @Autore, @Produttore, @Genere, @Durata); ";
+
             using var connection = new SqlConnection(connectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
