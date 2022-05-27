@@ -30,7 +30,7 @@ namespace Cinema_Ceccarelli.Repository
                 };
                 filmList.Add(film);
             }
-            return braniList;
+            return filmList;
         }
 
        
