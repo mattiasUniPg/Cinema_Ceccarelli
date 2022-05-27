@@ -1,6 +1,6 @@
 ﻿namespace Cinema_Ceccarelli.Models
 {
-    public class Spettatore
+    public class SpettatoreViewModel
     {
         public int IDSpett { get; set; }
         public string Nome { get; set; }

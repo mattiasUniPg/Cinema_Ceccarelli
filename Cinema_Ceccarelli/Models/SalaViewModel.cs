@@ -1,6 +1,6 @@
 ﻿namespace Cinema_Ceccarelli.Models
 {
-    public class SalaCinematografica
+    public class SalaViewModel
     {
         public int IDSala { get; set; }
         public int Capienza { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Cinema_Ceccarelli.Models
 {
-    public class Biglietto
+    public class BigliettoViewModel
     {
         public int IDBiglietto { get; set; }
         public int Posto { get; set; }

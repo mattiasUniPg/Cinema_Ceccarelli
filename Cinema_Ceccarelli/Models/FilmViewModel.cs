@@ -1,6 +1,6 @@
 ﻿namespace Cinema_Ceccarelli.Models
 {
-    public class Film
+    public class FilmViewModel
     {
         public int IDFilm { get; set; }
         public string Titolo { get; set; }
