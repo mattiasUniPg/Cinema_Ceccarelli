@@ -1,0 +1,67 @@
+﻿@model FilmViewModel;
+
+@{
+    ViewBag.Title = "Aggiunto Film";
+}
+
+@if (ViewBag.Message != null)
+{
+    <div roll="alert" class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div>Aggiungi Film:</div>
+        <hr>
+        @Html.HiddenFor(model => model.IDFilm) @* Per nascondere l'ID' *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Titolo, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Titolo)
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Autore, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Autore)
+            </div>
+        </div>
+         <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Produttore, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Produttore)
+            </div>
+        </div>
+         <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Genere, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Genere)
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Durata, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Durata)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salva" class="btn btn-primary"/>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Indietro","Index")
+</div>

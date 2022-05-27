@@ -1,5 +1,60 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model BigliettoViewModel;
+
 @{
+    ViewBag.Title = "Aggiunto Impiegato";
 }
+
+@if (ViewBag.Message != null)
+{
+    <div roll="alert" class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div>Aggiungi Biglietto:</div>
+        <hr>
+        @Html.HiddenFor(model => model.IDBiglietto) @* Per nascondere l'ID' *@
+        <div class="form-group">
+            @Html.LabelFor(model => model.Posto, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Posto)
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Prezzo, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Prezzo)
+            </div>
+        </div>
+         <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodSala, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CodSala)
+            </div>
+        </div>
+         <hr>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodFilm, htmlAttributes: new {@class = "label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CodFilm)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salva" class="btn btn-primary"/>
+            </div>
+        </div>
+
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Indietro","Index")
+</div>
