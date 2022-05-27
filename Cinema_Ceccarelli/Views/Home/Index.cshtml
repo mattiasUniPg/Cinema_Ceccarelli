@@ -1,8 +1,49 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿@model IEnumerable<FilmViewModel>
 
+@{
+    ViewBag.Title = "Film nelle sale cinema";
+}
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="Myh1">Welcome in our site !!</h1>
+    <img class="MyImg" src="~/images/icon.jfif"/>
 </div>
+<h1 class="display-4">Lista Film</h1>
+
+<p class="text-right">@Html.ActionLink("Aggiungi nuovo film","AggiungiFilm") </p>
+<p class="text-right">@Html.ActionLink("Aggiungi biglietto","AggiungiBiglietto") </p>
+<p class="text-right">@Html.ActionLink("Aggiungi spettatore","AggiungiAlbum") </p>
+
+
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.IDFilm)</th>
+        <th>@Html.DisplayNameFor(model => model.Titolo)</th>
+        <th>@Html.DisplayNameFor(model => model.Autore)</th>
+        <th>@Html.DisplayNameFor(model => model.Produttore)</th>
+        <th>@Html.DisplayNameFor(model => model.Genere)</th>
+        <th>@Html.DisplayNameFor(model => model.Durata)</th>
+    </tr>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var film in Model)
+        {
+            <tr>
+                <td>@film.Titolo</td>
+                <td>@film.Autore</td>
+                <td>@film.Produttore</td>
+                <td>@film.Genere</td>
+                <td>@film.Durata</td>
+                <td>
+                    @Html.ActionLink("Visualizza","Visualizza",new {ID = film.IDFilm})
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="5" class="text-center"> Nessun film disponibile</td>
+        </tr>
+    }
+</table>

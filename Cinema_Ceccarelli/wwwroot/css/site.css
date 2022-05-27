@@ -1,18 +1,37 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-color:azure;
+}
+
+.Myh1 {
+    font: x-large;
+    color: cornflowerblue;
+    font-style: italic;
+}
+
+.MyImg {
+    float: right;
+    border-radius: 12px;
+    width: 90px;
+    height: 90px;
+}
+table{
+    border:solid;
+    border-radius:10px;
+    border-color:black;
 }

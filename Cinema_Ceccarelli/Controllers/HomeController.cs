@@ -29,7 +29,7 @@ namespace Cinema_Ceccarelli.Controllers
             return View(dBManager.GetAllFilm());
         }
         //TOFIX
-        [HttpGet]
+       /* [HttpGet]
         public IActionResult SvuotaSala(int id)
         {
             var sala = dBManager_SaleCinema.SvuotaSala();
@@ -44,10 +44,10 @@ namespace Cinema_Ceccarelli.Controllers
                 dBManager_SaleCinema.SvuotaSala(sala);
 
             return RedirectToAction("Index");
-        }
+        }*/
 
         [HttpGet]
-        public IActionResult AggiungiTicket()
+        public IActionResult AggiungiBiglietto()
         {
             return View();
         }
@@ -60,7 +60,7 @@ namespace Cinema_Ceccarelli.Controllers
         }
 
         [HttpGet]
-        public IActionResult AggiungiVideo()
+        public IActionResult AggiungiFilm()
         {
             return View();
         }
@@ -72,7 +72,7 @@ namespace Cinema_Ceccarelli.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public IActionResult AggiungiCliente()
+        public IActionResult AggiungiSpettatore()
         {
             return View();
         }
@@ -85,7 +85,7 @@ namespace Cinema_Ceccarelli.Controllers
         }
 
         [HttpGet]
-        public IActionResult ScontoPensionati()
+        public IActionResult ScontoAnziani()
         {
             return View();
         }
@@ -97,7 +97,7 @@ namespace Cinema_Ceccarelli.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        public IActionResult ScontoMinori()
+        public IActionResult ScontoBimbi()
         {
             return View();
         }
@@ -105,7 +105,7 @@ namespace Cinema_Ceccarelli.Controllers
         [HttpPost]
         public IActionResult ScontoBimbi(SpettatoreViewModel spettatore)
         {
-            dBManager_Spett.ScontoAnziani(spettatore);
+            dBManager_Spett.ScontoBimbi(spettatore);
             return RedirectToAction("Index");
         }
         [HttpGet]
