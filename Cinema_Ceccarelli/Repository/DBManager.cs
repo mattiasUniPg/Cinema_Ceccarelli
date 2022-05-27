@@ -43,7 +43,7 @@ namespace Cinema_Ceccarelli.Repository
            ,[Produttore]
            ,[Genere]
            ,[Durata]
-           VALUES (@Titolo,@Autore,@Produttore,@Genere,@Durata) ";
+            VALUES (@Titolo, @Autore, @Produttore, @Genere, @Durata) ";
             using var connection = new SqlConnection(connectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);

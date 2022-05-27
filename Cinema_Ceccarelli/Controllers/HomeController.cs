@@ -28,8 +28,9 @@ namespace Cinema_Ceccarelli.Controllers
             return View();
             return View(dBManager.GetAllFilm());
         }
-        //TOFIX
-       /* [HttpGet]
+        
+       
+        /*[HttpGet]
         public IActionResult SvuotaSala(int id)
         {
             var sala = dBManager_SaleCinema.SvuotaSala();
@@ -44,9 +45,10 @@ namespace Cinema_Ceccarelli.Controllers
                 dBManager_SaleCinema.SvuotaSala(sala);
 
             return RedirectToAction("Index");
-        }*/
-
+        }
+         */
         [HttpGet]
+        
         public IActionResult AggiungiBiglietto()
         {
             return View();

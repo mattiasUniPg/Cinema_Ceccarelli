@@ -35,8 +35,7 @@ namespace Cinema_Ceccarelli.Repository
         public int SvuotaSala(SalaViewModel sala)
         {
             string sql = @"UPDATE SalaCinematografica
-                       SET [Capienza] = @Capienza
-                          
+                       SET [Capienza] = 250
                      WHERE IDSala =@IDSala";
             using var connection = new SqlConnection(connectionString);
             connection.Open();
