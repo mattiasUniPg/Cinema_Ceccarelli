@@ -34,6 +34,42 @@ namespace Cinema_Ceccarelli.Controllers
             var sala = dBManager_SaleCinema.SvuotaSala().Where(x => x.  ).FirstOrDefault();
             return View(sala);
         }
+        [HttpGet]
+        public IActionResult Aggiungi()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AggiungiSpettatore(SpettatoreViewModel spettatore)
+        {
+            dBManager_Spett.AggiungiSpettatore(spettatore);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult ScontoAnziani()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ScontoAnziani(SpettatoreViewModel spettatore)
+        {
+            dBManager_Spett.ScontoAnziani(spettatore);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult ScontoBimbi()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ScontoBimbi(SpettatoreViewModel spettatore)
+        {
+            dBManager_Spett.ScontoAnziani(spettatore);
+            return RedirectToAction("Index");
+        }
 
         public IActionResult Privacy()
         {

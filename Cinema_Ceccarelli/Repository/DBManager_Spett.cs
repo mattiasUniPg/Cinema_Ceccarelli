@@ -50,5 +50,19 @@ namespace Cinema_Ceccarelli.Repository
 
             return command.ExecuteNonQuery();
         }
+        public int Horror14(SpettatoreViewModel spettatore)
+        {
+            string sql = @"SELECT (Biglietto.Prezzo*0.5) AS 'Sconto_B'
+            FROM [dbo].[Biglietto]
+            INNER JOIN Spettatore ON Biglietto.IDBiglietto=Spettatore.CodBiglietto
+            WHERE Spettatore.DataNascita <='01-01-2017';";
+            using var connection = new SqlConnection(connectionString);
+            connection.Open();
+            using var command = new SqlCommand(sql, connection);
+            command.Parameters.AddWithValue("@DataNascita", spettatore.DataNascita);
+
+            return command.ExecuteNonQuery();
+        }
+
     }
 }
