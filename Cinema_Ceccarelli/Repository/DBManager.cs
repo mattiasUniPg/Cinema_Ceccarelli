@@ -6,7 +6,7 @@ namespace Cinema_Ceccarelli.Repository
     public class DBManager
     {
 
-        private static string connectionString = @"Server = ACADEMYNETPD04\SQLEXPRESS; Database = MUSIC; Trusted_Connection = True;";
+        private static string connectionString = @"Server = ACADEMYNETPD04\SQLEXPRESS; Database = CINEMA; Trusted_Connection = True;";
         public List<FilmViewModel> GetAllFilm()
         {
             List<FilmViewModel> filmList = new List<FilmViewModel>();
@@ -32,8 +32,6 @@ namespace Cinema_Ceccarelli.Repository
             }
             return filmList;
         }
-
-       
 
         public int AggiungiFilm(FilmViewModel film)
         {

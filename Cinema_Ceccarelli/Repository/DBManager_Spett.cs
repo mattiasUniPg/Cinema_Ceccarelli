@@ -6,7 +6,7 @@ namespace Cinema_Ceccarelli.Repository
     public class DBManager_Spett
     {
 
-        private static string connectionString = @"Server = ACADEMYNETPD04\SQLEXPRESS; Database = MUSIC; Trusted_Connection = True;";
+        private static string connectionString = @"Server = ACADEMYNETPD04\SQLEXPRESS; Database = CINEMA; Trusted_Connection = True;";
         public int AggiungiSpettatore(SpettatoreViewModel spettatore)
         {
             string sql = @"INSERT INTO Spettatore

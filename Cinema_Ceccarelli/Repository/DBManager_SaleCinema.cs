@@ -6,7 +6,7 @@ namespace Cinema_Ceccarelli.Repository
     public class DBManager_SaleCinema
     {
 
-        private static string connectionString = @"Server = ACADEMYNETPD04\SQLEXPRESS; Database = MUSIC; Trusted_Connection = True;";
+        private static string connectionString = @"Server = ACADEMYNETPD04\SQLEXPRESS; Database = CINEMA; Trusted_Connection = True;";
         public int IncassoCinema(SalaViewModel sala)
         {
             string sql = @"SELECT SUM(IncassoSala) AS 'TOTALE_INCASSO'

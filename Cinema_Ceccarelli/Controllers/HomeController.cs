@@ -25,11 +25,9 @@ namespace Cinema_Ceccarelli.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
             return View(dBManager.GetAllFilm());
         }
-        
-       
+
         /*[HttpGet]
         public IActionResult SvuotaSala(int id)
         {
