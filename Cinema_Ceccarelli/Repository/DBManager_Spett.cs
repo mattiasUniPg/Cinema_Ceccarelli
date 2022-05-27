@@ -12,7 +12,7 @@ namespace Cinema_Ceccarelli.Repository
             string sql = @"INSERT INTO Spettatore
             ([Nome]
            ,[Cognome]
-           ,[DataNascita]
+           ,[DataNascita])
            VALUES (@Nome,@Cognome,@DataNascita) ";
             using var connection = new SqlConnection(connectionString);
             connection.Open();

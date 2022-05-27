@@ -115,9 +115,9 @@ namespace Cinema_Ceccarelli.Controllers
         }
 
         [HttpPost]
-        public IActionResult IncassoCinema(SalaViewModel sala)
+        public IActionResult IncassoCinema(CinemaViewModel cinema)
         {
-            dBManager_SaleCinema.IncassoCinema(sala);
+            dBManager_SaleCinema.IncassoCinema(cinema);
             return RedirectToAction("Index");
         }
         [HttpGet]

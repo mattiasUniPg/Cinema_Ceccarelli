@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SalaViewModel>
+﻿@model IEnumerable<CinemaViewModel>
 
 @{
     ViewBag.Title = "Incasso sale cinema";
@@ -10,24 +10,19 @@
 
 <table class="table">
     <tr>
-        <th>@Html.DisplayNameFor(model => model.IDSala)</th>
-        <th>@Html.DisplayNameFor(model => model.IncassoSala)</th>
-        <th>@Html.DisplayNameFor(model => model.Capienza)</th>
-        <th>@Html.DisplayNameFor(model => model.NumBiglietti)</th>
-        <th>@Html.DisplayNameFor(model => model.CodFilm)</th>
+        <th>@Html.DisplayNameFor(model => model.IDCin)</th>
+        <th>@Html.DisplayNameFor(model => model.CodSala)</th>
     </tr>
     @if (Model != null && Model.Any())
     {
-        foreach (var film in Model)
+        foreach (var cinema in Model)
         {
             <tr>
-                <td>@film.IDSala</td>
-                <td>@film.IncassoSala</td>
-                <td>@film.Capienza</td>
-                <td>@film.NumBiglietti</td>
-                <td>@film.CodFilm</td>
+                <td>@cinema.IDCin</td>
+                <td>@cinema.IncassoGiornaliero</td>
+                <td>@cinema.CodSala</td>
                 <td>
-                    @Html.ActionLink("Visualizza","Visualizza",new {ID = film.IDSala})
+                    @Html.ActionLink("Visualizza","Visualizza",new {ID = cinema.IDCin})
                 </td>
             </tr>
         }

@@ -7,14 +7,14 @@ namespace Cinema_Ceccarelli.Repository
     {
 
         private static string connectionString = @"Server = ACADEMYNETPD04\SQLEXPRESS; Database = CINEMA; Trusted_Connection = True;";
-        public int IncassoCinema(SalaViewModel sala)
+        public int IncassoCinema(CinemaViewModel cinema)
         {
-            string sql = @"SELECT SUM(IncassoSala) AS 'TOTALE_INCASSO'
-            FROM [dbo].[SalaCinematografica]";
+            string sql = @"SELECT SUM(IncassoGiornaliero) AS 'TOTALE_INCASSO'
+            FROM [dbo].[Cinema]";
             using var connection = new SqlConnection(connectionString);
             connection.Open();
             using var command = new SqlCommand(sql, connection);
-            command.Parameters.AddWithValue("@IncassoSala", sala.IncassoSala);
+            command.Parameters.AddWithValue("@IncassoGiornaliero", cinema.IncassoGiornaliero);
 
             return command.ExecuteNonQuery();
         }

@@ -40,7 +40,7 @@ namespace Cinema_Ceccarelli.Repository
            ,[Autore]
            ,[Produttore]
            ,[Genere]
-           ,[Durata]
+           ,[Durata])
             VALUES(@Titolo, @Autore, @Produttore, @Genere, @Durata); ";
 
             using var connection = new SqlConnection(connectionString);
@@ -61,7 +61,7 @@ namespace Cinema_Ceccarelli.Repository
             ([Posto]
            ,[Prezzo]
            ,[CodSala]
-           ,[CodFilm]
+           ,[CodFilm])
            
            VALUES (@Posto,@Prezzo,@CodSala,@CodFilm) ";
             using var connection = new SqlConnection(connectionString);
